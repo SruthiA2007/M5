@@ -140,9 +140,33 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 5.	End the program.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100];
+    int num_rows, i, j, midpoint, len;
+    scanf("%s", str);
+    scanf("%d", &num_rows);
+    len = strlen(str);
+    midpoint = (2 * num_rows - 1) / 2;
+    for(i = 1; i <= num_rows; i++) {
+        for(j = 1; j <= num_rows - i; j++) {
+            printf(" ");
+        }
+        for(j = 0; j < len; j++) {
+            printf("%c ", str[j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
 
 
  ## OUTPUT
+
+ ![image](https://github.com/user-attachments/assets/712420e5-8326-48e5-8c0c-10089dcd94a3)
 
  
 
@@ -178,30 +202,35 @@ Step 6: End the program.
 ## PROGRAM
 ```
 #include <stdio.h>
-#include <string.h>
 int main() {
-    char str[100];
-    int num_rows, i, j, midpoint, len;
-    scanf("%s", str);
-    scanf("%d", &num_rows);
-    len = strlen(str);
-    midpoint = (2 * num_rows - 1) / 2;
-    for(i = 1; i <= num_rows; i++) {
-        for(j = 1; j <= num_rows - i; j++) {
-            printf(" ");
-        }
-        for(j = 0; j < len; j++) {
-            printf("%c ", str[j]);
-        }
-        printf("\n");
-    }
-    return 0;
+	int arr[10];
+	int *parr;
+	int i, n;
+
+	parr = arr;
+	scanf("%d", &n);
+
+	if (n > 10) {
+		printf("Please enter up to 10 elements only.\n");
+		return 1;
+	}
+	for(i = 0; i < n; i++) {
+		scanf("%d", (parr + i));
+	}
+	printf("The array elements are:\n");
+	for(i = 0; i < n; i++) {
+		printf("%d ", *(parr + i));
+	}
+	printf("\n");
+	return 0;
 }
 ```
 
-## OUTPUT
 
-![image](https://github.com/user-attachments/assets/712420e5-8326-48e5-8c0c-10089dcd94a3)
+## OUTPUT
+![image](https://github.com/user-attachments/assets/010fe37c-9a20-4098-a5a0-10b02f865318)
+
+
 
  
 
